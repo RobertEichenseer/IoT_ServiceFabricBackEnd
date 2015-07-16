@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ProtocolAdapterApplication", "BE_ProtocolAdapterApplication\ProtocolAdapterApplication.sfproj", "{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolAdapter", "BE_ProtocolAdapter\ProtocolAdapter.csproj", "{A993A23C-9398-41C6-A806-52F036EA538E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Debug|x64.ActiveCfg = Debug|x64
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Debug|x64.Build.0 = Debug|x64
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Debug|x64.Deploy.0 = Debug|x64
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Release|x64.ActiveCfg = Release|x64
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Release|x64.Build.0 = Release|x64
+		{03C2B8F4-EF68-45E9-B64D-19A6BDECF573}.Release|x64.Deploy.0 = Release|x64
+		{A993A23C-9398-41C6-A806-52F036EA538E}.Debug|x64.ActiveCfg = Debug|x64
+		{A993A23C-9398-41C6-A806-52F036EA538E}.Debug|x64.Build.0 = Debug|x64
+		{A993A23C-9398-41C6-A806-52F036EA538E}.Release|x64.ActiveCfg = Release|x64
+		{A993A23C-9398-41C6-A806-52F036EA538E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

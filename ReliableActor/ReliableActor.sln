@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleActor", "VehicleActor\VehicleActor.csproj", "{41256840-377A-4C17-869A-D145CEE5FE4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubReceiver", "EventHubReceiver\EventHubReceiver.csproj", "{FD8379C1-B876-40FE-A5A9-F358201694DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorInterfaces", "ActorInterfaces\ActorInterfaces.csproj", "{C51C97D2-1F8F-477B-8A80-9454979DD867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegionActor", "RegionActor\RegionActor.csproj", "{7A3FB0AE-79FB-488F-AAA6-C8376ED14B02}"
+EndProject
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ActorApplication.Deployment", "ActorApplication.Deployment\ActorApplication.Deployment.sfproj", "{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41256840-377A-4C17-869A-D145CEE5FE4D}.Debug|x64.ActiveCfg = Debug|x64
+		{41256840-377A-4C17-869A-D145CEE5FE4D}.Debug|x64.Build.0 = Debug|x64
+		{41256840-377A-4C17-869A-D145CEE5FE4D}.Release|x64.ActiveCfg = Release|x64
+		{41256840-377A-4C17-869A-D145CEE5FE4D}.Release|x64.Build.0 = Release|x64
+		{FD8379C1-B876-40FE-A5A9-F358201694DC}.Debug|x64.ActiveCfg = Debug|x64
+		{FD8379C1-B876-40FE-A5A9-F358201694DC}.Debug|x64.Build.0 = Debug|x64
+		{FD8379C1-B876-40FE-A5A9-F358201694DC}.Release|x64.ActiveCfg = Release|x64
+		{FD8379C1-B876-40FE-A5A9-F358201694DC}.Release|x64.Build.0 = Release|x64
+		{C51C97D2-1F8F-477B-8A80-9454979DD867}.Debug|x64.ActiveCfg = Debug|x64
+		{C51C97D2-1F8F-477B-8A80-9454979DD867}.Debug|x64.Build.0 = Debug|x64
+		{C51C97D2-1F8F-477B-8A80-9454979DD867}.Release|x64.ActiveCfg = Release|x64
+		{C51C97D2-1F8F-477B-8A80-9454979DD867}.Release|x64.Build.0 = Release|x64
+		{7A3FB0AE-79FB-488F-AAA6-C8376ED14B02}.Debug|x64.ActiveCfg = Debug|x64
+		{7A3FB0AE-79FB-488F-AAA6-C8376ED14B02}.Debug|x64.Build.0 = Debug|x64
+		{7A3FB0AE-79FB-488F-AAA6-C8376ED14B02}.Release|x64.ActiveCfg = Release|x64
+		{7A3FB0AE-79FB-488F-AAA6-C8376ED14B02}.Release|x64.Build.0 = Release|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Debug|x64.ActiveCfg = Debug|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Debug|x64.Build.0 = Debug|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Debug|x64.Deploy.0 = Debug|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Release|x64.ActiveCfg = Release|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Release|x64.Build.0 = Release|x64
+		{F37A64A6-46BB-4B8F-8DAE-59A3693C1192}.Release|x64.Deploy.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
