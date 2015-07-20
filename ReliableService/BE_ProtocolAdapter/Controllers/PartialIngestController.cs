@@ -69,7 +69,7 @@ namespace ProtocolAdapter.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "No Data");
 
             var dataCollection = await _reliableStateManager.GetOrAddAsync<IReliableDictionary<int, Telemetry>>(String.Format("VehicleId-{0}", telemetry.Id));
-            
+
             bool fullFrameIngest = (telemetry.MessageNumber % 10 == 0) || (telemetry.MessageNumber == 1);
 
             Telemetry fullTelemetry = new Telemetry();
@@ -79,23 +79,35 @@ namespace ProtocolAdapter.Controllers
             }
             else
             {
+
+                using (ITransaction transaction = _reliableStateManager.CreateTransaction())
+                {
+                    ConditionalResult<Telemetry> result = await dataCollection.TryGetValueAsync(transaction, 0);
+                    if (result.HasValue)
+                    {
+                        fullTelemetry = result.Value;
+                    }
+                }
+
                 fullTelemetry.Speed = telemetry.Speed ?? fullTelemetry.Speed;
                 fullTelemetry.EmergencySituation = telemetry.EmergencySituation ?? fullTelemetry.EmergencySituation;
                 fullTelemetry.PoIType = telemetry.PoIType ?? fullTelemetry.PoIType;
+                fullTelemetry.Latitude = telemetry.Latitude == 0 ? fullTelemetry.Latitude : telemetry.Latitude;
+                fullTelemetry.Longitude = telemetry.Longitude == 0 ? fullTelemetry.Longitude : telemetry.Longitude;
             }
 
 
             using (ITransaction transaction = _reliableStateManager.CreateTransaction())
             {
                 ConditionalResult<Telemetry> result = await dataCollection.TryGetValueAsync(transaction, 0);
-                
+
                 if (!result.HasValue)
                 {
                     await dataCollection.TryAddAsync(transaction, 0, fullTelemetry);
                 }
                 else
                 {
-                    await dataCollection.AddOrUpdateAsync(transaction, 0, fullTelemetry, (int key, Telemetry data) => fullTelemetry );
+                    await dataCollection.AddOrUpdateAsync(transaction, 0, fullTelemetry, (int key, Telemetry data) => fullTelemetry);
                 }
 
                 await transaction.CommitAsync();
@@ -103,7 +115,7 @@ namespace ProtocolAdapter.Controllers
 
             //TODO: Add EventHub Ingest
 
-            return Request.CreateResponse(HttpStatusCode.Created); 
+            return Request.CreateResponse(HttpStatusCode.Created);
         }
     }
 }
